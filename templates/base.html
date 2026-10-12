@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">🏥 Hospital Management</a>
+    <div>
+        <a class="btn btn-outline-light btn-sm" href="/">Dashboard</a>
+        <a class="btn btn-outline-light btn-sm" href="/patients">Patients</a>
+        <a class="btn btn-outline-light btn-sm" href="/doctors">Doctors</a>
+        <a class="btn btn-outline-light btn-sm" href="/appointments">Appointments</a>
+    </div>
+  </div>
+</nav>
+<div class="container mt-4">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

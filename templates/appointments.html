@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Appointments</h2>
+<form method="POST" class="card p-3 mb-4">
+  <div class="row">
+    <div class="col"><select name="patient" class="form-control">{% for p in patients %}<option>{{p['name']}}</option>{% endfor %}</select></div>
+    <div class="col"><select name="doctor" class="form-control">{% for d in doctors %}<option>{{d['name']}}</option>{% endfor %}</select></div>
+    <div class="col"><input name="date" type="date" class="form-control" required></div>
+    <div class="col"><input name="time" type="time" class="form-control" required></div>
+    <div class="col"><button class="btn btn-warning w-100">Book</button></div>
+  </div>
+</form>
+<table class="table table-bordered">
+  <tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th></tr>
+  {% for a in appointments %}
+  <tr><td>{{a['id']}}</td><td>{{a['patient_name']}}</td><td>{{a['doctor_name']}}</td><td>{{a['date']}}</td><td>{{a['time']}}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

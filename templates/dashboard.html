@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<div class="row mt-4">
+  <div class="col-md-4"><div class="card p-3 bg-primary text-white"><h3>{{ p_count }}</h3><p>Total Patients</p></div></div>
+  <div class="col-md-4"><div class="card p-3 bg-success text-white"><h3>{{ d_count }}</h3><p>Total Doctors</p></div></div>
+  <div class="col-md-4"><div class="card p-3 bg-warning"><h3>{{ a_count }}</h3><p>Total Appointments</p></div></div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Patients</h2>
+<form method="POST" class="card p-3 mb-4">
+  <div class="row">
+    <div class="col"><input name="name" class="form-control" placeholder="Name" required></div>
+    <div class="col"><input name="age" type="number" class="form-control" placeholder="Age" required></div>
+    <div class="col"><select name="gender" class="form-control"><option>Male</option><option>Female</option></select></div>
+    <div class="col"><input name="disease" class="form-control" placeholder="Disease" required></div>
+    <div class="col"><input name="phone" class="form-control" placeholder="Phone" required></div>
+    <div class="col"><button class="btn btn-primary w-100">Add</button></div>
+  </div>
+</form>
+<table class="table table-bordered">
+  <tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Disease</th><th>Phone</th></tr>
+  {% for p in patients %}
+  <tr><td>{{p['id']}}</td><td>{{p['name']}}</td><td>{{p['age']}}</td><td>{{p['gender']}}</td><td>{{p['disease']}}</td><td>{{p['phone']}}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
